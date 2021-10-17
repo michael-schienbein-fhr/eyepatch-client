@@ -1,0 +1,28 @@
+.message-container {
+	width: 100%;
+  background: rgba(75, 75, 75, 0.5);
+  display: flex;
+}
+.message-container:nth-child(odd) { 
+  background: black;
+}
+
+.message-sender {
+  color: red;
+	margin: 0;
+  padding: .25em;
+	font-weight: bold;
+	font-size: 1rem;
+	line-height: 1rem;
+	letter-spacing: 0.015em;
+}
+
+.message-body {
+	margin: 0;
+  padding: .25em;
+  margin-left: .3rem;
+  word-break: break-all;
+	font-size: 1rem;
+	line-height: 1rem;
+	letter-spacing: -0.025em;
+}
