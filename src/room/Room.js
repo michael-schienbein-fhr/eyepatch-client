@@ -53,53 +53,7 @@ const Room = () => {
       history.push('/rooms');
     }
   }
-  // useEffect(()=> {
-  //   return () => {
-  //     websocket.close();
-  //   }
-  // },[])
-  // useEffect(() => {
-  //   window. = e => {
-  //     setGlobalVideoId(null);
-  //     getWebSocket().close();
-  //     console.log("socket disconnect should fire.");
-  //   };
-  // });
-  // const pageAccessedByReload = (
-  //   (window.performance.navigation && window.performance.navigation.type === 1) ||
-  //   window.performance
-  //     .getEntriesByType('navigation')
-  //     .map((nav) => nav.type)
-  //     .includes('reload')
-  // );
 
-  // alert(pageAccessedByReload);
-  // useEffect(() => {
-  //   window.addEventListener("beforeunload", closeSocket);
-  //   return () => {
-  //     window.removeEventListener("beforeunload", closeSocket);
-  //   };
-  // }, []);
-  // if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-  //   console.info( "This page is reloaded" );
-  //   // history.push(0);
-  // } else {
-  //   console.info( "This page is not reloaded");
-  // }
-  // const closeSocket = (e) => {
-  // };
-  // const alertUser = (e) => {
-  //   console.log(getWebSocket())
-  //   e.preventDefault();
-  //   e.returnValue = "";
-  //   // setGlobalVideoId(null);
-  // };
-  // window.beforeunload = (e) => {
-  //   console.log('Stop this');
-  //   e.preventDefault()
-  //   websocket.close();
-  //   // e.returnValue = '';
-  // };
   const onOpen = () => {
     console.log('opened');
     setWebsocket(getWebSocket());
@@ -107,6 +61,10 @@ const Room = () => {
     sendJsonMessage({ type: "join", username })
   };
 
+  const onClose = () => {
+    console.log('closed');
+    sendJsonMessage({ type: "close" })
+  }
   const onMessage = (e) => {
     const message = JSON.parse(e.data);
     if (message.type === 'chat') {
@@ -115,6 +73,7 @@ const Room = () => {
       setGlobalPlayerState(message.state);
       setGlobalPlaybackTime(message.time);
     } else if (message.type === 'playerState' && message.state === 'sync') {
+      setGlobalPlayerState(message.playerState || "play");
       setJoinSyncTime(message.time);
     } else if (message.type === 'video' && message.action === 'add') {
       if (!globalQueue.some(msg => (msg.videoId === message.videoId))) {
@@ -127,13 +86,16 @@ const Room = () => {
       if (message.videoId !== globalVideoId) {
         setIsVideoLoaded(true);
       }
-        setGlobalVideoId(message.videoId);
-        setGlobalPlaybackTime(message.time);
-        if (isVideoLoaded) {
-          setGlobalPlayerState(null);
-          setGlobalPlayerState("seek");
-        }
-    }
+      setGlobalVideoId(message.videoId);
+      setGlobalPlaybackTime(message.time);
+      if (isVideoLoaded) {
+        setGlobalPlayerState(null);
+        setGlobalPlayerState("seek");
+      }
+    } else if (message.type === "note") {
+      console.log(message.text);
+    };
+
   };
 
   const {
@@ -146,7 +108,7 @@ const Room = () => {
   } = useWebSocket(wsURL, {
     onOpen,
     onMessage,
-    // onClose: handleClose,
+    onClose,
     // onError: handleError,
 
     //Will attempt to reconnect on all close events, such as server shutting down

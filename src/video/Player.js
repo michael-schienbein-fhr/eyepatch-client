@@ -1,8 +1,5 @@
-// import './Youtube.css';
 import './Player.css';
 import "react-placeholder/lib/reactPlaceholder.css";
-import jquery from 'jquery';
-import ReactDOM from 'react-dom'
 import ReactPlaceholder from 'react-placeholder';
 import VideoPlaceholder from './VideoPlaceholder';
 import YouTube from "react-youtube";
@@ -50,12 +47,10 @@ const Player = ({
   }, [player, joinSyncTime])
 
   useEffect(function () {
-    // console.log(ReactDOM.findDOMNode(<Player />));
     onProgress(true);
 
     if (player && globalVideoId !== currentVideoId) {
       setCurrentVideoId(globalVideoId);
-      // setTimeout(() => player.playVideo(), 500);
     };
 
   }, [globalVideoId, player]);
@@ -80,6 +75,7 @@ const Player = ({
 
   useEffect(function () {
     if (player) {
+      setAllowEvents(false);
       if (globalPlayerState === 'play') {
         console.log("Play!");
         player.playVideo();
@@ -93,6 +89,7 @@ const Player = ({
 
         player.seekTo(globalPlaybackTime);
       };
+      setAllowEvents(true);
     };
   }, [globalPlaybackTime, globalPlayerState]);
 

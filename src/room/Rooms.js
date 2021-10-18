@@ -11,11 +11,12 @@ const Rooms = ({ joinRoom }) => {
   useEffect(function getRoomsOnMount() {
     getRooms();
   }, []);
-
+  
   /** Triggered by getRooms form submit; reloads rooms. */
   async function getRooms() {
     let rooms = await EyepatchApi.getRooms();
     setRooms(rooms);
+    console.log(rooms);
   }
 
   if (!rooms) return <LoadingSpinner />;
@@ -33,6 +34,7 @@ const Rooms = ({ joinRoom }) => {
                 roomName={c.roomName}
                 hasPass={c.hasPass}
                 joinRoom={joinRoom}
+                roomOwner={c.roomOwner}
               />
             ))}
           </div>

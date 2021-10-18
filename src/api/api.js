@@ -86,6 +86,11 @@ class EyepatchApi {
     return res.room;
   }
 
+  static async deleteRoom(id) {
+    let res = await this.request(`rooms/${id}`, {}, "delete");
+    return res.room;
+  }
+
   static async getPrivateRoom(id) {
     let res = await this.request(`rooms/private/${id}`, {}, "get");
     return res.room;
