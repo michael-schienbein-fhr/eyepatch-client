@@ -26,29 +26,32 @@
 [1]: https://github.com/mschien/eyepatch-server
 [2]: https://github.com/mschien/eyepatch-messaging
 
-- Python 3
-- Flask
-- Postgresql Server
+## Available Scripts
 
-Execute the following command in a terminal to install all the required modules.
+In the project directory, you can run:
 
-```
-pip install -r requirements.txt
-```
+### `npm start`
 
-Additionally you will need Postgres installed and configured correctly, after install you must create an empty database for keymix.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```
-psql -c "keymix" // from shell
-CREATE DATABASE keymix; // from the psql console
-```
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Afterwards set the correct Flask environmental variable and run Flask.
+### `npm test`
 
-```
-export FLASK_APP=keymix
-flask run
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## <b>YouTube Player / Data API</b>
 
