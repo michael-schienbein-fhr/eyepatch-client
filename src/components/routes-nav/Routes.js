@@ -21,7 +21,7 @@ import RoomLoginForm from "../room/RoomLoginForm";
 
 function Routes({ login, signup, joinRoom, createRoom, deleteRoom }) {
   return (
-    <div className="Routes pt-5 overflow-auto">
+    <div className="Routes pt-5">
       <Switch>
         <Route exact path="/">
           <Homepage />

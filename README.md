@@ -2,7 +2,20 @@
 
 ![Keymix Homepage](https://github.com/fact0/capstoneOne/blob/master/keymixhome.jpg?raw=true)
 ## Live Demo:
-[https://keymix.herokuapp.com/](https://keymix.herokuapp.com/)
+[https://mschien-eyepatch.surge.sh/](https://mschien-eyepatch.surge.sh/)
+
+## User Flow:
+
+- Creating an account
+![Signin](https://github.com/ggomesneto/globetrotter-heroku/blob/main/readme-pictures/Signin.png)
+- Updating the profile
+![Profile](https://github.com/ggomesneto/globetrotter-heroku/blob/main/readme-pictures/Profile.png)
+- Creating a trip
+![Trip](https://github.com/ggomesneto/globetrotter-heroku/blob/main/readme-pictures/Trip.png)
+- Adding places on the trip
+![Places](https://github.com/ggomesneto/globetrotter-heroku/blob/main/readme-pictures/Places.png)
+- Sharing the trip map with friends
+- ![Places](https://github.com/ggomesneto/globetrotter-heroku/blob/main/readme-pictures/map.png)
 
 ## Installation and Requirements
 

@@ -24,7 +24,7 @@
     border-radius: .25rem;
   }
   
-.video-item.show span {
+.video-item:hover span {
     display: block;
   }
 .video-item.item img {
