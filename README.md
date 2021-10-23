@@ -19,12 +19,14 @@
 
 ## Installation and Requirements
 
-<b>You will need the backend and messaging server setup before running the client side code, you can find them here:</b>
+<b>You will need the backend and messaging server setup before running the client side code, you can find the corresponding repositories here:</b>
 - [Backend server / database][1]
 - [Messaging server][2]
+- [Frontend code][3]
 
 [1]: https://github.com/mschien/eyepatch-server
 [2]: https://github.com/mschien/eyepatch-messaging
+[3]: https://github.com/mschien/eyepatch-client
 
 ## Available Scripts
 
