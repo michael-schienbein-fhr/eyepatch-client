@@ -1,0 +1,17 @@
+.alert-danger{
+  background-color: rgba(255, 0, 0, 0.596);
+  border-color: #6c757d;
+}
+.alert-danger p{
+  color: whitesmoke!important;
+  text-shadow: -1px 0 #6c757d, 0 1px #6c757d, 1px 0 #6c757d, 0 -1px #6c757d;
+}
+
+.alert-success{
+  background-color: rgba(8, 141, 4, 0.596);
+  border-color: #6c757d;
+}
+.alert-success p{
+  color: whitesmoke!important;
+  text-shadow: -1px 0 #6c757d, 0 1px #6c757d, 1px 0 #6c757d, 0 -1px #6c757d;
+}

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
-import useLocalStorage from "./hooks/useLocalStorage";
-import Navigation from "./routes-nav/Navigation";
-import Routes from "./routes-nav/Routes";
-import LoadingSpinner from "./common/LoadingSpinner";
+import { BrowserRouter, useHistory } from "react-router-dom";
+import useLocalStorage from "./components/hooks/useLocalStorage";
+import Navigation from "./components/routes-nav/Navigation";
+import Routes from "./components/routes-nav/Routes";
+import LoadingSpinner from "./components/common/LoadingSpinner";
 import EyepatchApi from "./api/api";
 import UserContext from "./auth/UserContext";
 import jwt from "jsonwebtoken";
@@ -34,6 +34,7 @@ function App() {
   const [currentRoom, setCurrentRoom] = useState(null);
   const [userToken, setUserToken] = useLocalStorage(USER_TOKEN_STORAGE_ID);
   const [roomToken, setRoomToken] = useLocalStorage(ROOM_TOKEN_STORAGE_ID);
+  const history = useHistory();
 
   // Load user info from API. Until a user is logged in and they have a user token,
   // this should not run. It only needs to re-run when a user logs out, so
@@ -43,6 +44,7 @@ function App() {
   useEffect(function loadUserInfo() {
     async function getCurrentUser() {
       if (userToken) {
+        console.debug(userToken);
         try {
           let { username } = jwt.decode(userToken);
           // put the token on the Api class so it can use it to call the API.
@@ -119,6 +121,7 @@ function App() {
   async function login(loginData) {
     try {
       let userToken = await EyepatchApi.login(loginData);
+      
       setUserToken(userToken);
       return { success: true };
     } catch (errors) {
@@ -159,6 +162,16 @@ function App() {
     }
   }
 
+  async function deleteRoom(id) {
+    try {
+      await EyepatchApi.deleteRoom(id, currentUser);
+      setRoomToken(null);
+    } catch (err) {
+      console.error("API Error:", err.response);
+      let message = err.response.data.error.message;
+      throw Array.isArray(message) ? message : [message];
+    }
+  };
 
   if (!infoLoaded || !infoLoaded2) return <LoadingSpinner />;
 
@@ -168,7 +181,7 @@ function App() {
         value={{ currentUser, setCurrentUser, currentRoom, setCurrentRoom }}>
         <div className="App">
           <Navigation logout={logout} />
-          <Routes login={login} signup={signup} createRoom={createRoom} joinRoom={joinRoom} />
+          <Routes login={login} signup={signup} createRoom={createRoom} joinRoom={joinRoom} deleteRoom={deleteRoom} />
         </div>
       </UserContext.Provider>
     </BrowserRouter>

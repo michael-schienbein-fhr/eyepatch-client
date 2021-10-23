@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="video-item item"
+  >
+    <div
+      class="video-item-remove"
+    >
+      X
+    </div>
+    <img
+      class="image active"
+    />
+    <span />
+  </div>
+</DocumentFragment>
+`;

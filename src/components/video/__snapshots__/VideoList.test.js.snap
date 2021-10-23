@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="VideoList-container"
+  >
+    <div
+      class=" video-item item"
+      disabled=""
+    >
+      <img
+        alt="Dusky's EP 'Ordinary World' is out now. iTunes:http://po.st/DuskyowEP Spotify: http://po.st/DuskyOWSp Beatport: http://po.st/OrdinaryWorldEP \\"This EP was all ..."
+        class="image"
+        src="https://i.ytimg.com/vi/GjbibR6DV1s/mqdefault.jpg"
+      />
+      <span>
+        Dusky - Skin Deep (Official Video)
+      </span>
+    </div>
+    <div />
+  </div>
+</DocumentFragment>
+`;

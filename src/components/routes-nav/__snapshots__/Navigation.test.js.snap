@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="Navigation sticky-top navbar navbar-expand-md"
+  >
+    <a
+      class="navbar-brand ms-1"
+      href="/"
+    >
+      Eyepatch
+    </a>
+    <ul
+      class="navbar-nav ms-auto"
+    >
+      <li
+        class="nav-item me-2"
+      >
+        <a
+          class="btn btn-md btn-outline-secondary mx-0"
+          href="/rooms/create"
+          type="button"
+        >
+          Create New Room
+        </a>
+      </li>
+      <li
+        class="nav-item me-2"
+      >
+        <a
+          class="nav-link"
+          href="/rooms"
+        >
+          Rooms
+        </a>
+      </li>
+      <li
+        class="nav-item me-2"
+      >
+        <a
+          class="nav-link"
+          href="/profile"
+        >
+          Profile
+        </a>
+      </li>
+      <li
+        class="nav-item me-2"
+      >
+        <a
+          class="nav-link"
+          href="/"
+        >
+          Log out testfirst
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot when logged out 1`] = `
+<DocumentFragment>
+  <nav
+    class="Navigation sticky-top navbar navbar-expand-md"
+  >
+    <a
+      class="navbar-brand ms-1"
+      href="/"
+    >
+      Eyepatch
+    </a>
+    <ul
+      class="navbar-nav ms-auto"
+    >
+      <li
+        class="nav-item me-2"
+      >
+        <a
+          class="nav-link"
+          href="/login"
+        >
+          Login
+        </a>
+      </li>
+      <li
+        class="nav-item me-2"
+      >
+        <a
+          class="nav-link"
+          href="/signup"
+        >
+          Sign Up
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

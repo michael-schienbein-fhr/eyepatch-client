@@ -11,7 +11,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
  */
 
 class EyepatchApi {
-  // the token for interactive with the API will be stored here.
+  // the tokens for interactive with the API will be stored here.
   static userToken;
   static roomToken;
 
@@ -73,37 +73,34 @@ class EyepatchApi {
     return res.user;
   }
 
-  // /** Get get all rooms */
+  /** Get get all rooms */
 
   static async getRooms() {
     let res = await this.request("rooms");
     return res.rooms;
   }
-  // /** Get room by id */
+
+  /** Get room by id */
 
   static async getRoom(id) {
     let res = await this.request(`rooms/${id}`, {}, "get");
     return res.room;
   }
 
-  static async deleteRoom(id) {
-    let res = await this.request(`rooms/${id}`, {}, "delete");
+  /** Delete a room */
+  static async deleteRoom(id, data) {
+    let res = await this.request(`rooms/${id}`, data, "delete");
     return res.room;
   }
 
-  static async getPrivateRoom(id) {
-    let res = await this.request(`rooms/private/${id}`, {}, "get");
-    return res.room;
-  }
-
-  // /** Get newest room */
+  /** Get newest room */
 
   static async getNewest() {
     let res = await this.request("rooms/newest");
     return res.room;
   }
 
-  // /** Save user profile page. */
+  /** Save user profile page. */
 
   static async saveProfile(username, data) {
     let res = await this.request(`users/${username}`, data, "patch");

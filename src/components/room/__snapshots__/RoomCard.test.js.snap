@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot  1`] = `
+<DocumentFragment>
+  <div
+    class="RoomCard col-md-6 col-lg-4 mx-0 px-1 py-1"
+  >
+    <div
+      class="room-card-body"
+    >
+      <a
+        class="RoomCard-link"
+        href="/rooms/undefined"
+      >
+        <h5
+          class="card-title"
+        >
+          Room Name: 
+        </h5>
+        <p>
+          <small>
+            Room Id: 
+          </small>
+        </p>
+        <p>
+          <small>
+            Password Protected: ❌
+          </small>
+        </p>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,29 @@
+.RoomCard {
+ display: flex;
+ justify-content: center;
+ background-color: black;
+  border: 1px solid;
+  border-color: #6c757d;
+  border-radius: .25rem;
+}
+
+.room-card-body{
+  display: flex;
+  justify-content: start;
+  text-decoration: none;
+  width: 100%;
+  
+}
+
+.RoomCard-link{
+  width: 100%;
+  text-decoration: none;
+}
+
+.delete{
+  margin-right: 10px;
+  color: whitesmoke;
+  text-shadow: -1px 0 #6c757d, 0 1px #6c757d, 1px 0 #6c757d, 0 -1px #6c757d;
+  font-size: 1.5rem;
+  font-weight: bold;
+}

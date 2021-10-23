@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Routes pt-5 overflow-auto"
+  >
+    <div
+      class="Homepage"
+    >
+      <div
+        class="container text-center"
+      >
+        <h1
+          class="mb-4 font-weight-bold"
+        >
+          Eyepatch
+        </h1>
+        <p
+          class="lead"
+        >
+          Share your Youtube watching experience with friends
+        </p>
+        <h2>
+          Welcome Back, testuser!
+        </h2>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,7 +1,7 @@
 import './SignupForm.css';
-import React, { useState } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import Alert from "../common/Alert";
+import Alert from "../components/common/Alert";
 
 /** Signup form.
  *
@@ -55,8 +55,9 @@ function SignupForm({ signup }) {
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label>Username</label>
+                <label htmlFor="username">Username</label>
                 <input
+                  id="username"
                   name="username"
                   className="form-control"
                   value={formData.username}
@@ -64,8 +65,9 @@ function SignupForm({ signup }) {
                 />
               </div>
               <div className="form-group">
-                <label>Password</label>
+                <label htmlFor="password">Password</label>
                 <input
+                  id="password"
                   type="password"
                   name="password"
                   className="form-control"
@@ -73,10 +75,10 @@ function SignupForm({ signup }) {
                   onChange={handleChange}
                 />
               </div>
-
               <div className="form-group">
-                <label>First name</label>
+                <label htmlFor="firstName">First name</label>
                 <input
+                  id="firstName"
                   name="firstName"
                   className="form-control"
                   value={formData.firstName}
@@ -84,8 +86,9 @@ function SignupForm({ signup }) {
                 />
               </div>
               <div className="form-group">
-                <label>Last name</label>
+                <label htmlFor="lastName">Last name</label>
                 <input
+                  id="lastName"
                   name="lastName"
                   className="form-control"
                   value={formData.lastName}
@@ -93,8 +96,9 @@ function SignupForm({ signup }) {
                 />
               </div>
               <div className="form-group">
-                <label>Email</label>
+                <label htmlFor="email">Email</label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   className="form-control"
