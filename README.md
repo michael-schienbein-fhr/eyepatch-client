@@ -1,6 +1,6 @@
 # <b>KEYmix</b>
 
-![Keymix Homepage](https://github.com/fact0/capstoneOne/blob/master/keymixhome.jpg?raw=true)
+![Keymix Homepage](https://github.com/mschien/eyepatch-client/blob/master/images/eyepatch1.png)
 ## Live Demo:
 [https://mschien-eyepatch.surge.sh/](https://mschien-eyepatch.surge.sh/)
 
