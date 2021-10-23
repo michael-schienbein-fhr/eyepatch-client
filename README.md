@@ -45,9 +45,9 @@ flask run
 
 ## <b>YouTube Player / Data API</b>
 
-<b>Reference Docs for end points used in this app:
-[https://developers.google.com/youtube/iframe_api_reference](https://developers.google.com/youtube/iframe_api_reference)
-[https://developers.google.com/youtube/v3](https://developers.google.com/youtube/v3)
+<b>Reference Docs for end points used in this app:</b>
+![https://developers.google.com/youtube/iframe_api_reference](https://developers.google.com/youtube/iframe_api_reference)
+![https://developers.google.com/youtube/v3](https://developers.google.com/youtube/v3)
 
 ## <b>Built With</b>
 
