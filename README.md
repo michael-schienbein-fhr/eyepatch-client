@@ -19,6 +19,13 @@
 
 ## Installation and Requirements
 
+<b>You will need the backend and messaging server setup before running the client side code, you can find them here:</b>
+- [Backend server / database][1]
+- [Messaging server][2]
+
+[1]: https://github.com/mschien/eyepatch-server
+[2]: https://github.com/mschien/eyepatch-messaging
+
 - Python 3
 - Flask
 - Postgresql Server
@@ -46,19 +53,25 @@ flask run
 ## <b>YouTube Player / Data API</b>
 
 <b>Reference Docs for end points used in this app:</b>
--[https://developers.google.com/youtube/iframe_api_reference](https://developers.google.com/youtube/iframe_api_reference)
--[https://developers.google.com/youtube/v3](https://developers.google.com/youtube/v3)
+- [Youtube Embed Player API][3]
+- [Youtube Data API][4]
+
+
+[3]: https://developers.google.com/youtube/iframe_api_reference
+[4]: https://developers.google.com/youtube/v3
+
 
 ## <b>Built With</b>
 
 - React
 
+- Websockets
+
 - Node.js
 
 - Express.js
 
-- CSS3
+- PostgresQL
 
 - Bootstrap
 
-- JS
